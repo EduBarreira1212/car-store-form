@@ -46,16 +46,20 @@ const FormPage = () => {
         setData({...data, category: event.target.value});
     }
 
+    useEffect(() => {
+        setDisabled(!(!!data.name && !!data.brand && !!data.category && !!data.price && !!data.photo));
+    }, [data]);
+
     return (
         <Div>
             <h1>Car store form</h1>
             <Form>
                 <label htmlFor="car-name">Car name:</label>
-                <input type="text" value={data.name} onChange={handleChange} name="name" id="car-name" placeholder="Ex: F-150" required/>
+                <input type="text" value={data.name} onChange={handleChange} name="name" id="car-name" placeholder="Ex: F-150"/>
                 <label>Car Brand:</label>
-                <input type="text" value={data.brand} onChange={handleChange} name="brand" id="car-brand" placeholder="Ex: Ford" required/>
+                <input type="text" value={data.brand} onChange={handleChange} name="brand" id="car-brand" placeholder="Ex: Ford"/>
                 <label>Car category:</label>
-                <select value={data.category} onChange={handleSelectChange} name="category" id="car-category" required>
+                <select value={data.category} onChange={handleSelectChange} name="category" id="car-category">
                     <option value="Pickup">Pickup</option>
                     <option value="Sedan">Sedan</option>
                     <option value="Hatch">Hatch</option>
@@ -63,9 +67,9 @@ const FormPage = () => {
                     <option value="Sport">Sport</option>
                 </select>
                 <label>Price:</label>
-                <input type="number" value={data.price} onChange={handleChange} name="price" id="car-price" placeholder="Ex: 50000" required/>
+                <input type="number" value={data.price} onChange={handleChange} name="price" id="car-price" placeholder="Ex: 50000"/>
                 <label>Car photo:</label>
-                <input type="file" value={data.photo} onChange={handleChange} name="photo" id="car-photo" required/>
+                <input type="file" value={data.photo} onChange={handleChange} name="photo" id="car-photo"/>
                 <input type="submit" value="Send" disabled={disabled}/>
             </Form>
         </Div>
