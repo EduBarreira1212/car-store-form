@@ -1,8 +1,25 @@
+import styled from "styled-components";
+
+const Style = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+`;
+
+const Div = styled(Style)`
+    
+`;
+
+const Form = styled(Style)`
+    gap: 0.75vh;
+`;
+
 const FormPage = () => {
     return (
-        <div>
+        <Div>
             <h1>Car store form</h1>
-            <form>
+            <Form>
                 <label htmlFor="car-name">Car name:</label>
                 <input type="text" name="name" id="car-name"></input>
                 <label>Car Brand:</label>
@@ -18,8 +35,8 @@ const FormPage = () => {
                 <input type="number" name="price" id="car-price"/>
                 <label>Car photo:</label>
                 <input type="file" name="photo" id="car-photo"/>
-            </form>
-        </div>
+            </Form>
+        </Div>
     );
 }
 
