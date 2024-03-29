@@ -1,17 +1,18 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
-const Style = styled.div`
+const Style = css`
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 `;
 
-const Div = styled(Style)`
-    
+const Div = styled.div`
+    ${Style}
 `;
 
-const Form = styled(Style)`
+const Form = styled.form`
+    ${Style}
     gap: 0.75vh;
 `;
 
