@@ -78,9 +78,9 @@ const FormPage = () => {
             <Form onSubmit={handleSubmit}>
                 <label htmlFor="car-name">Car name:</label>
                 <input type="text" value={data.name} onChange={handleChange} name="name" id="car-name" placeholder="Ex: F-150"/>
-                <label>Car Brand:</label>
+                <label htmlFor="car-brand">Car Brand:</label>
                 <input type="text" value={data.brand} onChange={handleChange} name="brand" id="car-brand" placeholder="Ex: Ford"/>
-                <label>Car category:</label>
+                <label htmlFor="car-category">Car category:</label>
                 <select value={data.category} onChange={handleSelectChange} name="category" id="car-category">
                     <option value="Pickup">Pickup</option>
                     <option value="Sedan">Sedan</option>
@@ -88,9 +88,9 @@ const FormPage = () => {
                     <option value="SUV">SUV</option>
                     <option value="Sport">Sport</option>
                 </select>
-                <label>Price:</label>
+                <label htmlFor="car-price">Price:</label>
                 <input type="number" value={data.price} onChange={handleChange} name="price" id="car-price" placeholder="Ex: 50000"/>
-                <label>Car photo:</label>
+                <label htmlFor="car-photo">Car photo:</label>
                 <input type="file" value={data.photo} onChange={handleChange} name="photo" id="car-photo"/>
                 <InputSub type="submit" value="Send" disabled={disabled}/>
             </Form>
