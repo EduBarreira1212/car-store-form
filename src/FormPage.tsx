@@ -18,6 +18,13 @@ const Form = styled.form`
     gap: 0.75vh;
 `;
 
+const InputSub = styled.input`
+    height: 4vh;
+    width: 9vw;
+    font-size: larger;
+    margin-top: 2vh;
+`;
+
 interface Idatastate {
     name: string
     brand: string
@@ -85,7 +92,7 @@ const FormPage = () => {
                 <input type="number" value={data.price} onChange={handleChange} name="price" id="car-price" placeholder="Ex: 50000"/>
                 <label>Car photo:</label>
                 <input type="file" value={data.photo} onChange={handleChange} name="photo" id="car-photo"/>
-                <input type="submit" value="Send" disabled={disabled}/>
+                <InputSub type="submit" value="Send" disabled={disabled}/>
             </Form>
         </Div>
     );
