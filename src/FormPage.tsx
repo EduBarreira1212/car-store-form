@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
 import styled, { css } from "styled-components";
 
@@ -32,7 +33,7 @@ const FormPage = () => {
         brand: "",
         category: "",
         price: 0,
-        photo: undefined
+        photo: ""
     });
     
     const [disabled, setDisabled] = useState<boolean>(true);
@@ -50,10 +51,24 @@ const FormPage = () => {
         setDisabled(!(!!data.name && !!data.brand && !!data.category && !!data.price && !!data.photo));
     }, [data]);
 
+    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        try{
+            const response = await axios.post(
+                "https://apigenerator.dronahq.com/api/Pctzqml2/carForm", 
+                data
+            );
+            console.log('Resposta da API:', response.data);
+        }
+        catch{
+            console.log("Error fetching data", Error);
+        }
+    }
+
     return (
         <Div>
             <h1>Car store form</h1>
-            <Form>
+            <Form onSubmit={handleSubmit}>
                 <label htmlFor="car-name">Car name:</label>
                 <input type="text" value={data.name} onChange={handleChange} name="name" id="car-name" placeholder="Ex: F-150"/>
                 <label>Car Brand:</label>
