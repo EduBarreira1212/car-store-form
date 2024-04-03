@@ -35,11 +35,11 @@ interface Idatastate {
 
 const FormPage = () => {
 
-    const handleSubmit = async () => {
+    const handleSubmit = async (formvalues: Idatastate) => {
         try{
             const response = await axios.post(
                 "https://apigenerator.dronahq.com/api/Pctzqml2/carForm", 
-                
+                formvalues
             );
             console.log('Resposta da API:', response.data);
         }
@@ -53,7 +53,7 @@ const FormPage = () => {
             <h1>Car store form</h1>
             <Formik
                 initialValues={{name: "", brand: "", category: "", price: 0, photo: ""}}
-                onSubmit={handleSubmit}
+                onSubmit={(values) => {handleSubmit(values)}}
             >
                 <FormFormik>
                     <label htmlFor="car-name">Car name:</label>
