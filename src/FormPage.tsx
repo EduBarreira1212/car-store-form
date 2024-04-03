@@ -1,6 +1,5 @@
 import axios from "axios";
 import { Field, Form, Formik } from "formik";
-import { useEffect, useState } from "react";
 import styled, { css } from "styled-components";
 
 const Style = css`
@@ -36,34 +35,11 @@ interface Idatastate {
 
 const FormPage = () => {
 
-    const [data, setData] = useState<Idatastate>({
-        name: "",
-        brand: "",
-        category: "",
-        price: 0,
-        photo: ""
-    });
-    
-    const [disabled, setDisabled] = useState<boolean>(true);
-
-    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const {name, value} = event.target;
-        setData({...data, [name]: value});
-    }
-
-    const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-        setData({...data, category: event.target.value});
-    }
-
-    useEffect(() => {
-        setDisabled(!(!!data.name && !!data.brand && !!data.category && !!data.price && !!data.photo));
-    }, [data]);
-
     const handleSubmit = async () => {
         try{
             const response = await axios.post(
                 "https://apigenerator.dronahq.com/api/Pctzqml2/carForm", 
-                data
+                
             );
             console.log('Resposta da API:', response.data);
         }
