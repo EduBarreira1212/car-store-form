@@ -12,6 +12,7 @@ const Style = css`
 
 const Div = styled.div`
     ${Style}
+    height: 100vh;
 `;
 
 const FormFormik = styled(Form)`
