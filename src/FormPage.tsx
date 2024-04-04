@@ -35,10 +35,10 @@ interface Idatastate {
 }
 
 const ProductSchema = Yup.object().shape({
-    name: Yup.string().required().matches(/^[a-zA-Z0-9\s]+$/),
-    brand: Yup.string().required().matches(/^[a-zA-Z0-9\s]+$/),
+    name: Yup.string().required().matches(/^[a-zA-Z0-9\s]+$/, "Cannot contain special characters"),
+    brand: Yup.string().required().matches(/^[a-zA-Z0-9\s]+$/, "Cannot contain special characters"),
     category: Yup.string().required(),
-    price: Yup.number().required().positive(),
+    price: Yup.number().required().positive("The number needs to be bigger than zero"),
     photo: Yup.string().required()
 })
 
