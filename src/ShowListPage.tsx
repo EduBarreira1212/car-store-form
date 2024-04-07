@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import { Idatastate } from "./FormPage";
 
 const Div = styled.div`
     height: 100vh;
@@ -12,7 +13,7 @@ const Div = styled.div`
 `;
 
 const ShowListPage = () => {
-    const [list, setList] = useState([]);
+    const [list, setList] = useState<Idatastate[]>([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
