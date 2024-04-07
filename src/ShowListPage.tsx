@@ -13,6 +13,20 @@ const Div = styled.div`
     justify-content: center;
 `;
 
+const Input = styled.input`
+    padding: 0.5vw;
+    width: 10vw;
+    border-radius: 1vw;
+    border: 0.10vw solid #ccc;
+    font-size: 16px;
+    margin-top: 2vh;
+
+    &:focus{
+        border-color: #4CAF50;
+        outline: none;
+    }
+`;
+
 const Ul = styled.ul`
     list-style: none;
     padding: 0;
@@ -69,7 +83,7 @@ const ShowListPage = () => {
 
     return (
         <Div>
-            <input type="text" name="search" onChange={(e) => setTextFilter(e.target.value)}/>
+            <Input type="text" name="search" onChange={(e) => setTextFilter(e.target.value)}/>
             <Ul>
                 {list
                 .filter((car) => car.name.includes(textFilter))
