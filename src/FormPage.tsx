@@ -1,5 +1,6 @@
 import axios from "axios";
 import { ErrorMessage, Field, Form, Formik } from "formik";
+import { useNavigate } from "react-router-dom";
 import styled, { css } from "styled-components";
 import * as Yup from 'yup';
 
@@ -45,6 +46,8 @@ const ProductSchema = Yup.object().shape({
 
 const FormPage = () => {
 
+    const navigate = useNavigate();
+
     const handleSubmit = async (formvalues: Idatastate) => {
         try{
             const response = await axios.post(
@@ -52,6 +55,7 @@ const FormPage = () => {
                 formvalues
             );
             console.log('Resposta da API:', response.data);
+            navigate("/");
         }
         catch{
             console.log("Error fetching data", Error);
