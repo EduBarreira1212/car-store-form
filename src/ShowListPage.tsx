@@ -41,7 +41,9 @@ const ShowListPage = () => {
         <Div>
             <input type="text" name="search" onChange={(e) => setTextFilter(e.target.value)}/>
             <ul>
-                {list.map((car, index) => (
+                {list
+                .filter((car) => car.name.includes(textFilter))
+                .map((car, index) => (
                     <li key={index}><Car>{car}</Car></li>
                 ))}
             </ul>
