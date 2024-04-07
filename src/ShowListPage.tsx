@@ -20,8 +20,10 @@ const Ul = styled.ul`
 
 const Li = styled.li`
     background-color: red;
+    padding: 0.5vh 1vw;
     text-align: center;
     border-radius: 1vw;
+    margin-top: 2vh;
 `;
 
 const ShowListPage = () => {
