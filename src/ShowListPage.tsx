@@ -13,6 +13,11 @@ const Div = styled.div`
     justify-content: center;
 `;
 
+const Ul = styled.ul`
+    list-style: none;
+    padding: 0;
+`;
+
 const Li = styled.li`
     background-color: red;
     text-align: center;
@@ -46,13 +51,13 @@ const ShowListPage = () => {
     return (
         <Div>
             <input type="text" name="search" onChange={(e) => setTextFilter(e.target.value)}/>
-            <ul>
+            <Ul>
                 {list
                 .filter((car) => car.name.includes(textFilter))
                 .map((car, index) => (
                     <Li key={index}><Car>{car}</Car></Li>
                 ))}
-            </ul>
+            </Ul>
             <button onClick={() => navigate("/form-page")}>Register a car</button>
         </Div>
     );
