@@ -27,7 +27,7 @@ const InputSub = styled.input`
     margin-top: 2vh;
 `;
 
-interface Idatastate {
+export interface Idatastate {
     name: string
     brand: string
     category: string
