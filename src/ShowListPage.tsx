@@ -15,6 +15,7 @@ const Div = styled.div`
 
 const ShowListPage = () => {
     const [list, setList] = useState<Idatastate[]>([]);
+    const [textFilter, setTextFilter] = useState("");
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
@@ -38,6 +39,7 @@ const ShowListPage = () => {
 
     return (
         <Div>
+            <input type="text" name="search" onChange={(e) => setTextFilter(e.target.value)}/>
             <ul>
                 {list.map((car, index) => (
                     <li key={index}><Car>{car}</Car></li>
