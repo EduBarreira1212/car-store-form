@@ -13,6 +13,12 @@ const Div = styled.div`
     justify-content: center;
 `;
 
+const Li = styled.li`
+    background-color: red;
+    text-align: center;
+    border-radius: 1vw;
+`;
+
 const ShowListPage = () => {
     const [list, setList] = useState<Idatastate[]>([]);
     const [textFilter, setTextFilter] = useState("");
@@ -44,7 +50,7 @@ const ShowListPage = () => {
                 {list
                 .filter((car) => car.name.includes(textFilter))
                 .map((car, index) => (
-                    <li key={index}><Car>{car}</Car></li>
+                    <Li key={index}><Car>{car}</Car></Li>
                 ))}
             </ul>
             <button onClick={() => navigate("/form-page")}>Register a car</button>
