@@ -13,12 +13,14 @@ const Div = styled.div`
 
 const ShowListPage = () => {
     const [list, setList] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const response = await axios.get("https://apigenerator.dronahq.com/api/Pctzqml2/carForm");
                 setList(response.data);
+                setLoading(false);
             } catch (error) {
                 console.log("error:", error);
             }
@@ -27,6 +29,10 @@ const ShowListPage = () => {
     }, [])
 
     const navigate = useNavigate();
+
+    if(loading){
+        return <div>Loading...</div>
+    }
 
     return (
         <Div>
