@@ -26,6 +26,23 @@ const Li = styled.li`
     margin-top: 2vh;
 `;
 
+const RegisterBtn = styled.button`
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-top: 4vh;
+    margin-bottom: 3vh;
+    cursor: pointer;
+    border-radius: 1vw;
+    transition: background-color 0.3s;
+
+    &:hover{
+        background-color: #45a049;
+    }
+`;
+
 const ShowListPage = () => {
     const [list, setList] = useState<Idatastate[]>([]);
     const [textFilter, setTextFilter] = useState("");
@@ -60,7 +77,7 @@ const ShowListPage = () => {
                     <Li key={index}><Car>{car}</Car></Li>
                 ))}
             </Ul>
-            <button onClick={() => navigate("/form-page")}>Register a car</button>
+            <RegisterBtn onClick={() => navigate("/form-page")}>Register a car</RegisterBtn>
         </Div>
     );
 }
