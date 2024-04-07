@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { Idatastate } from "./FormPage";
+import Car from "./components/Car";
 
 const Div = styled.div`
     height: 100vh;
@@ -37,6 +38,11 @@ const ShowListPage = () => {
 
     return (
         <Div>
+            <ul>
+                {list.map((car, index) => (
+                    <li key={index}><Car>{car}</Car></li>
+                ))}
+            </ul>
             <button onClick={() => navigate("/form-page")}>Register a car</button>
         </Div>
     );
