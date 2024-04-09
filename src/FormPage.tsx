@@ -21,6 +21,11 @@ const FormFormik = styled(Form)`
     gap: 0.75vh;
 `;
 
+const InputFormik = styled(Field)`
+    border: 0.10vw solid #ccc;
+    
+`;
+
 const InputSub = styled.input`
     height: 4vh;
     width: 9vw;
@@ -72,10 +77,10 @@ const FormPage = () => {
             >
                 <FormFormik>
                     <label htmlFor="car-name">Car name:</label>
-                    <Field type="text" name="name" id="car-name" placeholder="Ex: F-150"/>
+                    <InputFormik type="text" name="name" id="car-name" placeholder="Ex: F-150"/>
                     <ErrorMessage name="name" component="div"/>
                     <label htmlFor="car-brand">Car Brand:</label>
-                    <Field type="text" name="brand" id="car-brand" placeholder="Ex: Ford"/>
+                    <InputFormik type="text" name="brand" id="car-brand" placeholder="Ex: Ford"/>
                     <ErrorMessage name="brand" component="div"/>
                     <label htmlFor="car-category">Car category:</label>
                     <Field as="select" name="category" id="car-category">
@@ -87,10 +92,10 @@ const FormPage = () => {
                     </Field>
                     <ErrorMessage name="category" component="div"/>
                     <label htmlFor="car-price">Price:</label>
-                    <Field type="number" name="price" id="car-price" placeholder="Ex: 50000"/>
+                    <InputFormik type="number" name="price" id="car-price" placeholder="Ex: 50000"/>
                     <ErrorMessage name="price" component="div"/>
                     <label htmlFor="car-photo">Car photo:</label>
-                    <Field type="file" name="photo" id="car-photo"/>
+                    <InputFormik type="file" name="photo" id="car-photo"/>
                     <ErrorMessage name="photo" component="div"/>
                     <InputSub type="submit" value="Send"/>
                 </FormFormik>
