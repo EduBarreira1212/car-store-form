@@ -1,17 +1,17 @@
 
 # React Quote list vote
 
-This project created with Create react app has the function of show a form and send to a API generate by DronaHQ
+This project created with Create react app has the function of show a form and send to a API generate by DronaHQ and get the data from this API and render in a list
 
 
 ## Stack
 
-**Front-end:** React, TypeScript, Styled components, axios
-
+**Front-end:** React, TypeScript
+**Packages:** Formik, Axios, Styled components, React router
 
 ## Learnings
 
-In this project i learn how to use validate the form and to make a POST to a URL
+In this project i learned how to use Formik, validate the form and to make a POST/GET to a URL
 
 
 ## Available Scripts
