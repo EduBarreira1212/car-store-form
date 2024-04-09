@@ -29,7 +29,14 @@ const InputFormik = styled(Field)`
 `;
 
 const InputSelect = styled(Field)`
-    
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23333"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 0.10vw top 50%;
+    background-size: 20px;
+    padding: 1vh 5vw 1vh 0.5vw;
 `;
 
 const InputSub = styled.input`
