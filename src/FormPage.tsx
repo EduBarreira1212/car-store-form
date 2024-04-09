@@ -40,10 +40,16 @@ const InputSelect = styled(Field)`
 `;
 
 const InputSub = styled.input`
-    height: 4vh;
-    width: 9vw;
-    font-size: larger;
-    margin-top: 2vh;
+    font-size: 16px;
+    margin-top: 4vh;
+    margin-bottom: 4vh;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 1vw;
+    cursor: pointer;
+    transition: background-color 0.3s;
 `;
 
 export interface Idatastate {
