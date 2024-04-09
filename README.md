@@ -1,12 +1,12 @@
 
-# React Quote list vote
+# React car store form
 
 This project created with Create react app has the function of show a form and send to a API generate by DronaHQ and get the data from this API and render in a list
 
 
 ## Stack
 
-**Front-end:** React, TypeScript
+**Front-end:** React, TypeScript  
 **Packages:** Formik, Axios, Styled components, React router
 
 ## Learnings
