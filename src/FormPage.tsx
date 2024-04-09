@@ -28,6 +28,10 @@ const InputFormik = styled(Field)`
     border-radius: 5px;
 `;
 
+const InputSelect = styled(Field)`
+    
+`;
+
 const InputSub = styled.input`
     height: 4vh;
     width: 9vw;
@@ -85,13 +89,13 @@ const FormPage = () => {
                     <InputFormik type="text" name="brand" id="car-brand" placeholder="Ex: Ford"/>
                     <ErrorMessage name="brand" component="div"/>
                     <label htmlFor="car-category">Car category:</label>
-                    <Field as="select" name="category" id="car-category">
+                    <InputSelect as="select" name="category" id="car-category">
                         <option value="Pickup">Pickup</option>
                         <option value="Sedan">Sedan</option>
                         <option value="Hatch">Hatch</option>
                         <option value="SUV">SUV</option>
                         <option value="Sport">Sport</option>
-                    </Field>
+                    </InputSelect>
                     <ErrorMessage name="category" component="div"/>
                     <label htmlFor="car-price">Price:</label>
                     <InputFormik type="number" name="price" id="car-price" placeholder="Ex: 50000"/>
