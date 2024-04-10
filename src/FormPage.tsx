@@ -50,6 +50,10 @@ const InputSub = styled.input`
     border-radius: 1vw;
     cursor: pointer;
     transition: background-color 0.3s;
+
+    &:hover{
+        background-color: #45a049;
+    }
 `;
 
 export interface Idatastate {
