@@ -56,6 +56,12 @@ const InputSub = styled.input`
     }
 `;
 
+const ErrorMessages = styled(ErrorMessage)`
+    color: #ff0000;
+    font-size: 15px;
+    margin-top: 5px;
+`;
+
 export interface Idatastate {
     name: string
     brand: string
@@ -101,10 +107,10 @@ const FormPage = () => {
                 <FormFormik>
                     <label htmlFor="car-name">Car name:</label>
                     <InputFormik type="text" name="name" id="car-name" placeholder="Ex: F-150"/>
-                    <ErrorMessage name="name" component="div"/>
+                    <ErrorMessages name="name" component="div"/>
                     <label htmlFor="car-brand">Car Brand:</label>
                     <InputFormik type="text" name="brand" id="car-brand" placeholder="Ex: Ford"/>
-                    <ErrorMessage name="brand" component="div"/>
+                    <ErrorMessages name="brand" component="div"/>
                     <label htmlFor="car-category">Car category:</label>
                     <InputSelect as="select" name="category" id="car-category">
                         <option value="Pickup">Pickup</option>
@@ -113,13 +119,13 @@ const FormPage = () => {
                         <option value="SUV">SUV</option>
                         <option value="Sport">Sport</option>
                     </InputSelect>
-                    <ErrorMessage name="category" component="div"/>
+                    <ErrorMessages name="category" component="div"/>
                     <label htmlFor="car-price">Price:</label>
                     <InputFormik type="number" name="price" id="car-price" placeholder="Ex: 50000"/>
-                    <ErrorMessage name="price" component="div"/>
+                    <ErrorMessages name="price" component="div"/>
                     <label htmlFor="car-photo">Car photo:</label>
                     <InputFormik type="file" name="photo" id="car-photo"/>
-                    <ErrorMessage name="photo" component="div"/>
+                    <ErrorMessages name="photo" component="div"/>
                     <InputSub type="submit" value="Send"/>
                 </FormFormik>
             </Formik>
